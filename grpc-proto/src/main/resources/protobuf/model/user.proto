@@ -1,0 +1,12 @@
+syntax = "proto3";
+package com.spring.grpc.protobuf.model;
+
+option java_multiple_files = true;
+option java_outer_classname = "UserProto";
+option java_package = "com.spring.grpc.protobuf.model";
+
+message User {
+    string username = 1;
+    string password = 2;
+    string email = 3;
+}

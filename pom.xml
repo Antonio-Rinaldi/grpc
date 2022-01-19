@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.6.2</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+    
+	<groupId>com.spring.grpc</groupId>
+	<artifactId>grpc-parent</artifactId>
+	<version>${revision}</version>
+    <packaging>pom</packaging>
+    
+    <name>grpc-parent</name>
+	<description>grpc parent</description>
+	
+    <modules>
+        <module>grpc-proto</module>
+        <module>grpc-server</module>
+        <module>grpc-client</module>
+    </modules>
+    
+    <properties>
+        <revision>1.0.0-SNAPSHOT</revision>
+        <java.version>11</java.version>
+        <grpc.version>1.43.2</grpc.version>
+        <protobuf.version>3.14.0</protobuf.version>
+        <protobuf-plugin.version>0.6.1</protobuf-plugin.version>
+        <net.devh.version>2.11.0.RELEASE</net.devh.version>
+        <kr.motd.maven.version>1.6.2</kr.motd.maven.version>
+        <org.xolstice.maven.plugins.version>0.6.1</org.xolstice.maven.plugins.version>
+    </properties>
+    
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.spring.grpc</groupId>
+                <artifactId>grpc-proto</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>net.devh</groupId>
+                <artifactId>grpc-server-spring-boot-starter</artifactId>
+                <version>${net.devh.version}</version>
+<!--                <exclusions>-->
+<!--                    <exclusion>-->
+<!--                        <groupId>io.grpc</groupId>-->
+<!--                        <artifactId>grpc-netty-shaded</artifactId>-->
+<!--                    </exclusion>-->
+<!--                </exclusions>-->
+            </dependency>
+
+            <dependency>
+                <groupId>net.devh</groupId>
+                <artifactId>grpc-client-spring-boot-starter</artifactId>
+                <version>${net.devh.version}</version>
+<!--                <exclusions>-->
+<!--                    <exclusion>-->
+<!--                        <groupId>io.grpc</groupId>-->
+<!--                        <artifactId>grpc-netty-shaded</artifactId>-->
+<!--                    </exclusion>-->
+<!--                </exclusions>-->
+            </dependency>
+
+            <dependency>
+                <groupId>net.devh</groupId>
+                <artifactId>grpc-client-spring-boot-autoconfigure</artifactId>
+                <version>${net.devh.version}</version>
+                <type>pom</type>
+            </dependency>
+
+            <dependency>
+                <groupId>io.grpc</groupId>
+                <artifactId>grpc-protobuf</artifactId>
+                <version>${grpc.version}</version>
+            </dependency>
+            
+            <dependency>
+                <groupId>io.grpc</groupId>
+                <artifactId>grpc-stub</artifactId>
+                <version>${grpc.version}</version>
+            </dependency>
+
+<!--            <dependency>-->
+<!--                <groupId>io.grpc</groupId>-->
+<!--                <artifactId>protoc-gen-grpc-java</artifactId>-->
+<!--                <version>${grpc.version}</version>-->
+<!--                <type>pom</type>-->
+<!--            </dependency>-->
+        </dependencies>
+    </dependencyManagement>
+</project>

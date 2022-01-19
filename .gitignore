@@ -1,0 +1,11 @@
+/.idea/
+/grpc-proto/HELP.md
+/grpc-proto/grpc-proto.iml
+/grpc-proto/target/
+/grpc-server/HELP.md
+/grpc-server/grpc-server.iml
+/grpc-server/target/
+/grpc-client/HELP.md
+/grpc-client/grpc-client.iml
+/grpc-client/target/
+/grpc-parent.iml
