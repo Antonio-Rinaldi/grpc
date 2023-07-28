@@ -1,5 +1,4 @@
 syntax = "proto3";
-package com.spring.grpc.protobuf.api;
 
 import "google/protobuf/empty.proto";
 import "google/protobuf/wrappers.proto";
@@ -10,7 +9,7 @@ option java_outer_classname = "UserApiProto";
 option java_package = "com.spring.grpc.protobuf.api";
 
 service UserApi {
-    rpc GetUser(google.protobuf.StringValue) returns (protobuf.model.User);
-    rpc GetUsers(google.protobuf.Empty) returns (stream protobuf.model.User);
-    rpc SaveUser(protobuf.model.User) returns (google.protobuf.StringValue);
+    rpc GetUser(google.protobuf.StringValue) returns (User);
+    rpc GetUsers(google.protobuf.Empty) returns (stream User);
+    rpc SaveUser(User) returns (google.protobuf.StringValue);
 }

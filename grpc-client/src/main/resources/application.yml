@@ -1,6 +1,7 @@
 server.port: 8101
 
-grpc:
-  server:
-    host: localhost
-    port: 8100
+grpc.client.local:
+     address: static://localhost:8100
+     enableKeepAlive: true
+     keepAliveWithoutCalls: true
+     negotiationType: plaintext

@@ -6,9 +6,9 @@ import com.spring.grpc.grpcclient.service.GrpcClient;
 import com.spring.grpc.protobuf.model.User;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 
-import javax.annotation.PostConstruct;
 import java.util.List;
 
 @Slf4j
@@ -18,7 +18,7 @@ public class Main {
 
     private final GrpcClient grpcClient;
 
-    @PostConstruct
+    @Autowired
     public void main() {
         User user1 = User.newBuilder()
                 .setUsername("User1")
